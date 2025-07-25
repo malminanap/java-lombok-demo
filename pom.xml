@@ -120,7 +120,6 @@
                     <generator>
                     <database>
                         <name>org.jooq.meta.mysql.MySQLDatabase</name>
-                        <includes>test</includes>
                         <inputSchema>demo_db</inputSchema>
                     </database>
                     <generate>
