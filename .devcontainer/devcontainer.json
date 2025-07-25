@@ -15,5 +15,6 @@
         "ms-azuretools.vscode-docker"
       ]
     }
-  }
+  },
+  "postCreateCommand": "apt-get update && apt-get install -y maven && mvn generate-sources"
 }
