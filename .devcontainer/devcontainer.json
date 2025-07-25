@@ -16,5 +16,5 @@
       ]
     }
   },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y maven default-mysql-client mongo-tools && chmod +x .devcontainer/init.sh && .devcontainer/init.sh"
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y maven default-mysql-client && chmod +x .devcontainer/init.sh && .devcontainer/init.sh"
 }
