@@ -16,5 +16,5 @@
       ]
     }
   },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y maven default-mysql-client && chmod +x .devcontainer/init.sh && .devcontainer/init.sh"
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y curl gnupg maven default-mysql-client && curl -fsSL https://pgp.mongodb.com/server-6.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-6.0.gpg --dearmor && echo 'deb [ signed-by=/usr/share/keyrings/mongodb-server-6.0.gpg ] https://repo.mongodb.org/apt/debian bookworm/mongodb-org/6.0 main' | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list && sudo apt-get update && sudo apt-get install -y mongodb-mongosh && chmod +x .devcontainer/init.sh && .devcontainer/init.sh"
 }
