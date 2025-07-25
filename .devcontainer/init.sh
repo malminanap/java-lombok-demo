@@ -8,7 +8,7 @@ done
 echo "✅ MySQL está listo."
 
 echo "⏳ Esperando a que MongoDB esté disponible..."
-until mongosh "mongodb://mongo:27017/demo" --eval "db.stats()" > /dev/null 2>&1; do
+until nc -z mongo 27017; do
   sleep 2
 done
 echo "✅ MongoDB está listo."
@@ -17,7 +17,7 @@ echo "📦 Insertando datos iniciales en MySQL..."
 mysql -h mysql -uuser -ppassword demo_db < .devcontainer/init-mysql.sql
 
 echo "📦 Insertando datos iniciales en MongoDB..."
-mongosh "mongodb://mongo:27017/demo" .devcontainer/init-mongo.js
+mongoimport --host mongo --port 27017 --db demo --collection users --jsonArray --file .devcontainer/init-mongo.json
 
 echo "🚀 Ejecutando mvn code-gen..."
 mvn code-gen
