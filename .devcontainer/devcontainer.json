@@ -1,18 +1,10 @@
 {
-  "name": "Java + MySQL + Mongo",
+  "name": "Java DevContainer",
   "dockerComposeFile": ["../docker-compose.yml"],
-  "service": "devcontainer", 
+  "service": "devcontainer",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "overrideCommand": false,
   "forwardPorts": [3306, 27017],
-  "features": {
-    "ghcr.io/devcontainers/features/java:1": {
-      "version": "17"
-    },
-    "ghcr.io/devcontainers/features/maven:1": {
-      "version": "3.9.6"
-    }
-  },
   "customizations": {
     "vscode": {
       "extensions": [
