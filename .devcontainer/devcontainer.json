@@ -1,6 +1,6 @@
 {
-  "name": "Java Dev",
-  "image": "mcr.microsoft.com/devcontainers/java:17",
+  "name": "Java Maven Dev",
+  "image": "mcr.microsoft.com/devcontainers/java:17-bullseye",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -9,12 +9,5 @@
       ]
     }
   },
-  "features": {
-    "ghcr.io/devcontainers/features/java:1": {
-      "version": "17"
-    },
-    "ghcr.io/devcontainers/features/maven:1": {
-      "version": "latest"
-    }
-  }
+  "postCreateCommand": "mvn --version"
 }
