@@ -1,5 +1,11 @@
 version: '3.8'
 services:
+  devcontainer:
+    image: mcr.microsoft.com/devcontainers/java:17
+    volumes:
+      - ..:/workspaces:cached
+    command: sleep infinity
+
   mysql:
     image: mysql:8
     container_name: mysql-db
@@ -10,17 +16,9 @@ services:
       MYSQL_DATABASE: demo_db
       MYSQL_USER: user
       MYSQL_PASSWORD: password
-    volumes:
-      - mysqldata:/var/lib/mysql
 
   mongo:
     image: mongo:6
     container_name: mongo-db
     ports:
       - "27017:27017"
-    volumes:
-      - mongodata:/data/db
-
-volumes:
-  mysqldata:
-  mongodata:

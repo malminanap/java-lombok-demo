@@ -1,21 +1,27 @@
 {
-  "name": "Java Dev Environment",
+  "name": "Java + MySQL + Mongo",
   "dockerComposeFile": ["../docker-compose.yml"],
-  "service": "mysql",
+  "service": "devcontainer", 
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "overrideCommand": false,
+  "forwardPorts": [3306, 27017],
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17"
+    },
+    "ghcr.io/devcontainers/features/maven:1": {
+      "version": "3.9.6"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
         "vscjava.vscode-java-pack",
         "mongodb.mongodb-vscode",
-        "microsoft.vscode-docker"
+        "mtxr.sqltools",
+        "mtxr.sqltools-driver-mysql",
+        "ms-azuretools.vscode-docker"
       ]
-    }
-  },
-  "postCreateCommand": "docker-compose up -d",
-  "features": {
-    "ghcr.io/devcontainers/features/java:1": {
-      "version": "17"
     }
   }
 }
