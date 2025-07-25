@@ -1,5 +1,21 @@
 {
-  "name": "Java 17 Environment",
-  "image": "mcr.microsoft.com/devcontainers/java:17",
-  "postCreateCommand": "mvn clean compile"
+  "name": "Java Dev Environment",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "mysql",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "mongodb.mongodb-vscode",
+        "microsoft.vscode-docker"
+      ]
+    }
+  },
+  "postCreateCommand": "docker-compose up -d",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17"
+    }
+  }
 }
