@@ -8,7 +8,7 @@ done
 echo "✅ MySQL está listo."
 
 echo "⏳ Esperando a que MongoDB esté disponible..."
-until mongosh "mongodb://mongo:27017/demo" --eval "db.runCommand({ ping: 1 })" > /dev/null 2>&1; do
+until mongosh "mongodb://mongo:27017/" --eval "db.runCommand({ ping: 1 })" > /dev/null 2>&1; do
   sleep 2
 done
 echo "✅ MongoDB está listo."
