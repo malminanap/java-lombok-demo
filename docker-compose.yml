@@ -22,3 +22,10 @@ services:
     container_name: mongo-db
     ports:
       - "27017:27017"
+
+  app:
+    build:
+      context: .
+    volumes:
+      - .:/workspace
+    command: sleep infinity

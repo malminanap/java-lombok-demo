@@ -16,5 +16,5 @@
       ]
     }
   },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y maven && mvn generate-sources"
+  "postCreateCommand": "./.devcontainer/init.sh"
 }
